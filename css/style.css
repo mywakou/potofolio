@@ -7,6 +7,11 @@ body {
     place-items: center;
     min-height: 100vh;
     overflow-y: hidden;
+    font-size: 1.5rem;
+}
+
+main {
+    height: 100vh;
 }
 
 ul {
@@ -16,6 +21,13 @@ ul {
     margin: 0;
     height: 100%;
 }
+
+p {
+    font-size: 1.5rem;
+    font-weight: 100;
+    padding: 0;
+}
+
 
 nav {
     padding: 0 2rem;
@@ -46,7 +58,7 @@ nav svg {
 
 h1 {
     margin: 0;
-    text-transform: uppercase;
+    text-transform: lowercase;
     text-align: right;
     font-weight: 100;
 }
@@ -72,8 +84,43 @@ img {
     translate: 0% -50%;
     z-index: -1;
     width: 70vmin;
-    aspect-ratio: 1;
     transform-origin: 300% 50%;
+}
+
+.center-image {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    z-index: 1;
+    width: 50vmin;
+    transform-origin: center;
+}
+
+img.rounded {
+    border-radius: 50%;
+}
+
+.rounded-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.rounded-table th,
+.rounded-table td {
+    border: 1px solid #E6E6FA;
+    /* 淡い藤色 */
+    padding: 8px;
+}
+
+.rounded-table th {
+    background-color: #F8F8FF;
+    /* GhostWhite for better visibility */
+}
+
+.rounded-table thead tr {
+    border-bottom: 2px solid #E6E6FA;
+    /* 淡い藤色 */
 }
 
 @media(prefers-reduced-motion: no-preference) {
@@ -109,4 +156,38 @@ h2 {
     text-transform: uppercase;
     font-weight: 200;
     max-width: 50%;
+}
+
+.start {
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9000;
+}
+
+.start p {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 9999;
+    width: 280px;
+}
+
+.rotate {
+    animation: rotation 15s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
